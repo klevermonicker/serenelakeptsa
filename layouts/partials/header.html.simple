@@ -1,0 +1,66 @@
+<header class="site-header">
+  <div class="header-banner">
+    {{ if .Site.Params.headerBanner }}
+      <a href="/" class="banner-link">
+        <img src="{{ .Site.Params.headerBanner }}" alt="{{ .Site.Title }}" class="banner-image">
+      </a>
+    {{ else }}
+      <div class="site-title-text">
+        <a href="/">{{ .Site.Title }}</a>
+      </div>
+    {{ end }}
+  </div>
+  
+  <nav class="main-nav">
+    <div class="container">
+      
+      <!-- DEBUG: Print menu structure -->
+      <div style="background: yellow; padding: 10px; margin: 10px 0;">
+        <p><strong>Menu Debug:</strong></p>
+        {{ range .Site.Menus.main }}
+          <p>{{ .Name }} - Parent: {{ .Parent }} - Identifier: {{ .Identifier }}</p>
+        {{ end }}
+      </div>
+      
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="/">Home</a>
+        </li>
+        
+        <!-- SIMPLE TEST: Hardcoded dropdown -->
+        <li class="nav-item has-dropdown">
+          <a href="/about/">
+            About Us
+            <span class="dropdown-arrow">▾</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="/board/">Board</a></li>
+          </ul>
+        </li>
+        
+        <li class="nav-item">
+          <a href="/events/">Events</a>
+        </li>
+        
+        <li class="nav-item">
+          <a href="/news/">News</a>
+        </li>
+        
+        <!-- SIMPLE TEST: Hardcoded dropdown -->
+        <li class="nav-item has-dropdown">
+          <a href="/our-school/">
+            Our School
+            <span class="dropdown-arrow">▾</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="/our-school/staff-favorites/">Staff Favorites</a></li>
+          </ul>
+        </li>
+        
+        <li class="nav-item btn-wapta">
+          <a href="https://www.wastatepta.org">WA-PTA</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>

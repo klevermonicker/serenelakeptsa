@@ -1,0 +1,6 @@
+{{- /* Load custom CSS from assets */ -}}
+{{ $custom := resources.Get "css/custom.css" }}
+{{ if $custom }}
+  {{ $customStyle := $custom | resources.Minify | resources.Fingerprint }}
+  <link rel="stylesheet" href="{{ $customStyle.RelPermalink }}" integrity="{{ $customStyle.Data.Integrity }}" crossorigin="anonymous">
+{{ end }}

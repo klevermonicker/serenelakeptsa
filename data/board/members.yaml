@@ -1,0 +1,23 @@
+- name: Hannah Blomberg
+  position: President
+  email: president@slptsa.org
+  photo: hannah-blomberg.jpg
+  bio: Hannah has been involved with the PTSA for forever
+
+- name: Michyle Babb
+  position: Vice President
+  email: vp@slptsa.org
+  photo: michyle-babb.jpg
+  bio: Michyle is new to the PTSA this year
+
+- name: Dan Babb
+  position: Secretary
+  email: secretary@slptsa.org
+  photo: dan-babb.jpg
+  bio: Dan is new to the PTSA this year
+
+- name: Brett Robertson
+  position: Treasurer
+  email: treasurer@slptsa.org
+  photo: brett-robertson.jpg
+  bio: Brett is new to the PTSA this year

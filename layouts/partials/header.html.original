@@ -1,0 +1,54 @@
+<header class="site-header">
+  <div class="header-banner">
+    {{ if .Site.Params.headerBanner }}
+      <a href="/" class="banner-link">
+        <img src="{{ .Site.Params.headerBanner }}" alt="{{ .Site.Title }}" class="banner-image">
+      </a>
+    {{ else }}
+      <div class="site-title-text">
+        <a href="/">{{ .Site.Title }}</a>
+      </div>
+    {{ end }}
+  </div>
+  
+  <nav class="main-nav">
+    <div class="container">
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="/">Home</a>
+        </li>
+        
+        {{ range .Site.Menus.main }}
+          {{ if not .Parent }}
+            
+            <!-- Count children for this item -->
+            {{ $myID := .Identifier }}
+            {{ $children := slice }}
+            {{ range $.Site.Menus.main }}
+              {{ if eq .Parent $myID }}
+                {{ $children = $children | append . }}
+              {{ end }}
+            {{ end }}
+            {{ $hasChildren := gt (len $children) 0 }}
+            
+            <li class="nav-item {{ if $hasChildren }}has-dropdown{{ end }} {{ with .Params.class }}{{ . }}{{ end }}">
+              <a href="{{ .URL }}">
+                {{ .Name }}
+                {{ if $hasChildren }}<span class="dropdown-arrow">▾</span>{{ end }}
+              </a>
+              
+              {{ if $hasChildren }}
+              <ul class="dropdown-menu">
+                {{ range $children }}
+                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                {{ end }}
+              </ul>
+              {{ end }}
+            </li>
+            
+          {{ end }}
+        {{ end }}
+      </ul>
+    </div>
+  </nav>
+</header>

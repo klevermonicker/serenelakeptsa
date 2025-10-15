@@ -1,0 +1,31 @@
+{{ define "main" }}
+<div class="container">
+  <h1>Upcoming Events</h1>
+
+  {{ $events := .Site.Data.events.upcoming }}
+  {{ $now := now }}
+
+  <div class="events-list">
+    {{ range $events }}
+    {{ $eventDate := time .date }}
+    {{ if ge $eventDate $now }}
+    <div class="event">
+      <div class="event-date">
+        <span class="month">{{ $eventDate.Format "Jan" }}</span>
+        <span class="day">{{ $eventDate.Format "02" }}</span>
+      </div>
+      <div class="event-details">
+        <h3>{{ .title }}</h3>
+        <p class="event-meta">
+          <span class="time">{{ .time }}</span> |
+          <span class="location">{{ .location }}</span>
+        </p>
+        <p class="description">{{ .description }}</p>
+        <span class="category-badge">{{ .category }}</span>
+      </div>
+    </div>
+    {{ end }}
+    {{ end }}
+  </div>
+</div>
+{{end}}

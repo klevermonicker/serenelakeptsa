@@ -1,0 +1,20 @@
+{{ define "main" }}
+<div class="container">
+  <h1>PTSA Board Members</h1>
+  
+  {{ $members := .Site.Data.board.members }}
+  <div class="board-grid">
+    {{ range $members }}
+    <div class="board-member">
+      {{ if .photo }}
+      <img src="/images/board/{{ .photo }}" alt="{{ .name }}">
+      {{ end }}
+      <h3>{{ .name }}</h3>
+      <p class="position">{{ .position }}</p>
+      <p class="email"><a href="mailto:{{ .email }}">{{ .email }}</a></p>
+      <p class="bio">{{ .bio }}</p>
+    </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

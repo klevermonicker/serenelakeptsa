@@ -1,0 +1,37 @@
+main:
+  - identifier: home
+    name: Home
+    url: /
+    weight: 1
+  - identifier: about
+    name: About us
+    url: /about/
+    weight: 10
+  - identifier: board
+    name: Board
+    url: /board/
+    parent: about
+    weight: 11
+  - identifier: events
+    name: Events
+    url: /events/
+    weight: 30
+  - identifier: news
+    name: News
+    url: /news/
+    weight: 40
+  - identifier: our-school
+    name: Our School
+    url: /our-school/
+    weight: 50
+  - identifier: staff-favorites
+    name: Staff Favorites
+    url: /our-school/staff-favorites/
+    parent: our-school
+    weight: 51
+  - identifier: wapta
+    name: WA-PTA
+    url: https://www.wastatepta.org
+    weight: 60
+    params:
+      class: btn-wapta

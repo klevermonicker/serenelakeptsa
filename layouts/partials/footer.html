@@ -1,0 +1,55 @@
+<footer class="site-footer">
+  <div class="container">
+    
+    <!-- Main Footer Content -->
+    <div class="footer-content">
+      
+      <!-- About Column -->
+      <div class="footer-column">
+        <h3>{{ .Site.Title }}</h3>
+        <p>Supporting students, teachers, and families at Serene Lake Elementary School in Mukilteo School District.</p>
+        <p class="contact-info">
+          📧 <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a>
+        </p>
+      </div>
+      
+      <!-- Quick Links Column -->
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="/about/">About Us</a></li>
+          <li><a href="/board/">Meet the Board</a></li>
+          <li><a href="/events/">Events</a></li>
+          <li><a href="/news/">News</a></li>
+          <li><a href="/join/">Join PTSA</a></li>
+        </ul>
+      </div>
+      
+      <!-- Resources Column -->
+      <div class="footer-column">
+        <h3>Resources</h3>
+        <ul class="footer-links">
+          <li><a href="https://wastatepta.org" target="_blank">WA State PTA ↗</a></li>
+          <li><a href="https://www.pta.org" target="_blank">National PTA ↗</a></li>
+          <li><a href="https://www.mukilteoschools.org/domain/50" target="_blank">Serene Lake Elementary ↗</a></li>
+          <li><a href="https://www.mukilteoschools.org" target="_blank">Mukilteo Schools ↗</a></li>
+        </ul>
+      </div>
+      
+      <!-- Join CTA Column -->
+      <div class="footer-column footer-cta">
+        <h3>Get Involved!</h3>
+        <p>Join us in making a difference in our school community.</p>
+        <a href="/join/" class="btn btn-large btn-accent" style="background-color: white !important; color: #2B9B9E !important;">Join PTSA Today</a>
+      </div>
+      
+    </div>
+    
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p class="copyright">© {{ now.Year }} Serene Lake PTSA • Mukilteo School District</p>
+      <p class="tagline">Every child. One voice.</p>
+    </div>
+    
+  </div>
+</footer>

@@ -1,0 +1,60 @@
+######################## default configuration ####################
+# Your theme name
+theme: "dot-org"
+# Title of your website (required).
+title: "Serene Lake PTSA"
+# Default time zone for time stamps; use any valid tz database name: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List
+timeZone: "America/Los_Angeles"
+# Defines the minimum amount of words to reddened in a summary
+summaryLength: 50
+baseURL: "https://serene-lake-ptsa.githublio/"
+languageCode: "en-us"
+
+params:
+  # Basic info about the organization
+  author: "Serene Lake PTSA"
+  description: "Serene Lake Elementary PTSA - Mukilteo School District"
+  organizationName: "Serene Lake PTSA"
+  organizationLogo: "/img/logo.png"
+  # Colors pulled from the logo
+  colors:
+    primary: "#2B9B9E"      # Teal - your main brand color
+    secondary: "#0D5C75"    # Dark teal - for headings/accents
+    accent: "#FFFFFF"       # White
+    text: "#2D2D2D"        # Dark gray for body text
+    background: "#FFFFFF"   # White background
+    lightGray: "#E8E8E8"   # Light backgrounds/borders
+  # Contact information
+  email: "info@slptsa.org"
+  address: "Serene Lake Elementary, Mukilteo, WA"
+  # Icky Gross Socials
+  social:
+    facebook: ""
+    instagram: ""
+  # Footer
+  footer:
+    copyright: "© 2024-2025 Serene Lake PTSA. All rights reserved."
+    tagLine: "Supporting students, teachers and families at Serene Lake Elementary"
+  headerBanner: "/img/banner.png"
+######################## i18n ####################
+# Auto-detect Chinese/Japanese/Korean Languages in the content. see: https://gohugo.io/getting-started/configuration/#hascjklanguage
+hasCJKLanguage: false
+# Set default content directory for multilingual
+contentDir: content/en/
+# Set fallback if international version is not available
+defaultContentLanguage: en
+# Set the default language as the root rather than in folder i.e. don't use /en/
+defaultContentLanguageInSubdir: false
+
+######################## privacy & speed ####################
+# Enable do not track, no cookies on Video embeds
+privacy:
+  youtube:
+    privacyEnhanced: true
+  vimeo:
+    enableDNT: true
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true

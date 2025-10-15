@@ -1,0 +1,86 @@
+{{ define "main" }}
+<div class="staff-favorites-page">
+  
+  <!-- Page Intro -->
+  <section class="page-intro">
+    <div class="container">
+      <div class="intro-content">
+        {{ .Content }}
+      </div>
+    </div>
+  </section>
+
+  <!-- Staff Favorites Grid -->
+  <section class="staff-section">
+    <div class="container">
+      
+      {{ $staff := .Site.Data.staff.favorites }}
+      {{ if $staff }}
+      <div class="staff-grid">
+        {{ range $staff }}
+        <div class="staff-card">
+          
+          <div class="staff-photo">
+            {{ if .photo }}
+            <img src="/img/staff/{{ .photo }}" alt="{{ .name }}">
+            {{ else }}
+            <div class="photo-placeholder">
+              <span>{{ substr .name 0 1 }}</span>
+            </div>
+            {{ end }}
+          </div>
+          
+          <div class="staff-info">
+            <h3>{{ .name }}</h3>
+            <p class="role">{{ .role }}</p>
+            
+            <div class="favorites-list">
+              {{ with .favorites.color }}
+              <div class="favorite-item">
+                <span class="label">💙 Favorite Color:</span>
+                <span class="value">{{ . }}</span>
+              </div>
+              {{ end }}
+              
+              {{ with .favorites.book }}
+              <div class="favorite-item">
+                <span class="label">📚 Favorite Book:</span>
+                <span class="value">{{ . }}</span>
+              </div>
+              {{ end }}
+              
+              {{ with .favorites.food }}
+              <div class="favorite-item">
+                <span class="label">🍕 Favorite Food:</span>
+                <span class="value">{{ . }}</span>
+              </div>
+              {{ end }}
+              
+              {{ with .favorites.hobby }}
+              <div class="favorite-item">
+                <span class="label">🎨 Hobby:</span>
+                <span class="value">{{ . }}</span>
+              </div>
+              {{ end }}
+              
+              {{ with .favorites.fun_fact }}
+              <div class="favorite-item fun-fact">
+                <span class="label">✨ Fun Fact:</span>
+                <span class="value">{{ . }}</span>
+              </div>
+              {{ end }}
+            </div>
+          </div>
+          
+        </div>
+        {{ end }}
+      </div>
+      {{ else }}
+      <p class="no-data">Staff favorites coming soon!</p>
+      {{ end }}
+      
+    </div>
+  </section>
+
+</div>
+{{ end }}

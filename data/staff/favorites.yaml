@@ -1,0 +1,39 @@
+- name: Mrs. Johnson
+  role: 3rd Grade Teacher
+  photo: placeholder.jpg
+  favorites:
+    color: Purple
+    book: "Charlotte's Web"
+    food: Tacos
+    hobby: Gardening
+    fun_fact: "I've visited 15 National Parks!"
+
+- name: Mr. Davis
+  role: PE Teacher
+  photo: placeholder.jpg
+  favorites:
+    color: Blue
+    book: "Hatchet"
+    food: Pizza
+    hobby: Running
+    fun_fact: "I've run 3 marathons"
+
+- name: Ms. Rodriguez
+  role: Music Teacher
+  photo: placeholder.jpg
+  favorites:
+    color: Yellow
+    book: "Harry Potter"
+    food: Sushi
+    hobby: Playing guitar
+    fun_fact: "I play 4 instruments"
+
+- name: Mrs. Chen
+  role: Kindergarten Teacher
+  photo: placeholder.jpg
+  favorites:
+    color: Green
+    book: "Where the Wild Things Are"
+    food: Pasta
+    hobby: Baking
+    fun_fact: "I've been teaching for 20 years!"

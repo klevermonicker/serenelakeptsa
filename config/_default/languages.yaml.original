@@ -1,0 +1,54 @@
+en:
+  languageName: English
+  weight: 1
+  ### copyright (markdown can be used) ###
+  copyright: "Copyright &copy; {{< current_year >}} Serene Lake PTSA. All Rights Reserved." 
+  title: "Serene Lake PTSA"
+  params:
+    description: "Serene Lake Elementary PTSA - Mukilteo School District"
+    ### accessibility ###
+    accessibility:
+      skip_text: "Skip to content"
+      help_text: "Accessibility Statement"
+      help_url: "/example-page/"
+    ### calls to action ###
+    main_cta:
+      text: "Join Us!"
+      link: "https://slptsa.givebacks.com/shop"
+    footer_cta:
+      text: "Join us"
+      link: "https://slptsa.givebacks.com/shop"
+  menu:
+    main:
+    - identifier: "about"
+      name: "About us"
+      url: "/"
+      weight: 1
+    - identifier: "board"
+      name: "Board"
+      url: "/board/"
+      parent: "about"
+      weight: 1
+    - identifier: "events"
+      name: "Events"
+      url: "/events/"
+      weight: 3
+    - identifier: "news"
+      name: "News"
+      url: "/news/"
+      weight: 4
+    - identifier: "our-school"
+      name: "Our School"
+      url: "/our-school/"
+      weight: 5
+    - identifier: "Staff Favorites"
+      name: "Staff Favorites"
+      url: "/our-school/staff-favorites/"
+      weight: 5
+      parent: "our-school"
+    - identifier: "wapta"
+      name: "WA-PTA"
+      url: "https://www.wastatepta.org"
+      weight: 6
+      params:
+        class: "btn-wapta"
