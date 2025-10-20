@@ -1,5 +1,5 @@
 ---
-title: "Board Members"
+title: ""
 menu:
     main:
         weight: 20

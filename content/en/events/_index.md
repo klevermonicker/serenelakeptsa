@@ -1,6 +1,5 @@
 ---
-title: "Events"
+title: "PTSA Events!"
+description: "Check out our upcomiong PTSA events and activities"
 layout: list
 ---
-
-Check out our upcoming events and activities!

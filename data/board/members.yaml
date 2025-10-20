@@ -1,23 +1,60 @@
+# Elected Officials
 - name: Hannah Blomberg
   position: President
   email: president@slptsa.org
   photo: hannah-blomberg.jpg
-  bio: Hannah has been involved with the PTSA for forever
+  bio: "Champion of connection and community. We call her our Swiss Army knife, because there's nothing she can't do!" 
+  elected: true
+  election_date: "May 2024"
+  term: "2024-2025"
 
 - name: Michyle Babb
   position: Vice President
   email: vp@slptsa.org
   photo: michyle-babb.jpg
-  bio: Michyle is new to the PTSA this year
+  bio: "Always ready with fresh ideas and a can-do attitude. Known for turning \"What if...\" into \"Let's do it!\""
+  elected: true
+  election_date: "May 2024"
+  term: "2024-2025"
 
 - name: Dan Babb
   position: Secretary
   email: secretary@slptsa.org
   photo: dan-babb.jpg
-  bio: Dan is new to the PTSA this year
+  bio: "Master of meeting minutes and emoji captions. Once said, \"don't give me a problem you don't want solved!"
+  elected: true
+  election_date: "May 2024"
+  term: "2024-2025"
 
 - name: Brett Robertson
   position: Treasurer
   email: treasurer@slptsa.org
   photo: brett-robertson.jpg
-  bio: Brett is new to the PTSA this year
+  bio: "Budget wizard and big kid at heart. Makes every dollar count for our kids and brings the FUN while doing it!"
+  elected: true
+  election_date: "May 2024"
+  term: "2024-2025"
+
+# Appointed Positions
+# Add appointed board members below with elected: false
+# Example:
+- name: Allison Bahl
+  position: Concessions Chair
+  email: communications@slptsa.org
+  photo: jane-doe.jpg
+  bio: Allison manages to keep us all well plied with nummies.
+  elected: false
+
+- name: Jessica Steele
+  position: Social Media Co-Chair
+  email: communications@slptsa.org
+  photo: jane-doe.jpg
+  bio: Jessica helps keep our socials up to date.
+  elected: false
+
+- name: Mandy Robertson
+  position: Social Media Co-Chair
+  email: communications@slptsa.org
+  photo: jane-doe.jpg
+  bio: Mandy helps keep our socials up to date.
+  elected: false

@@ -1,31 +1,105 @@
 {{ define "main" }}
-<div class="container">
-  <h1>Upcoming Events</h1>
+<div class="events-page">
 
-  {{ $events := .Site.Data.events.upcoming }}
-  {{ $now := now }}
+  <section class="events-section">
+    <div class="container">
+      
+      {{ $events := .Site.Data.events.upcoming }}
+      {{ $now := now }}
+      
+      {{ if $events }}
+      
+      <!-- Group events by month -->
+      {{ $eventsByMonth := dict }}
+      {{ range $events }}
+        {{ if .date }}
+          {{ $eventDate := time .date }}
+          {{ if ge $eventDate $now }}
+            {{ $monthKey := $eventDate.Format "2006-01" }}
+            {{ $monthEvents := index $eventsByMonth $monthKey | default slice }}
+            {{ $monthEvents = $monthEvents | append . }}
+            {{ $eventsByMonth = merge $eventsByMonth (dict $monthKey $monthEvents) }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+      
+      {{ if $eventsByMonth }}
+      {{ range $monthKey, $monthEvents := $eventsByMonth }}
+        {{ $firstEvent := index $monthEvents 0 }}
+        {{ $monthDate := time $firstEvent.date }}
+        
+        <div class="month-section">
+          <h2 class="month-header">{{ $monthDate.Format "January 2006" }}</h2>
+          
+          <div class="events-grid">
+            {{ range $monthEvents }}
+            {{ $eventDate := time .date }}
+            
+            <div class="event-card {{ if .multi_day }}multi-day{{ end }}">
+              <div class="event-date-badge">
+                {{ if and .multi_day .end_date }}
+                  {{ $endDate := time .end_date }}
+                  <span class="date-range">
+                    {{ $eventDate.Format "Jan 2" }} - {{ $endDate.Format "Jan 2" }}
+                  </span>
+                {{ else }}
+                  <span class="month">{{ $eventDate.Format "Jan" }}</span>
+                  <span class="day">{{ $eventDate.Format "02" }}</span>
+                {{ end }}
+              </div>
 
-  <div class="events-list">
-    {{ range $events }}
-    {{ $eventDate := time .date }}
-    {{ if ge $eventDate $now }}
-    <div class="event">
-      <div class="event-date">
-        <span class="month">{{ $eventDate.Format "Jan" }}</span>
-        <span class="day">{{ $eventDate.Format "02" }}</span>
-      </div>
-      <div class="event-details">
-        <h3>{{ .title }}</h3>
-        <p class="event-meta">
-          <span class="time">{{ .time }}</span> |
-          <span class="location">{{ .location }}</span>
-        </p>
-        <p class="description">{{ .description }}</p>
-        <span class="category-badge">{{ .category }}</span>
-      </div>
+              <div class="event-details">
+                <div class="event-content">
+                  <h3>{{ .title }}</h3>
+
+                  <div class="event-meta">
+                    <p class="event-time">
+                      <strong>⏰ Time:</strong> {{ .time }}
+                    </p>
+                    <p class="event-location">
+                      <strong>📍 Location:</strong> {{ .location }}
+                    </p>
+                    {{ if .category }}
+                    <span class="event-category category-{{ .category }}">{{ .category }}</span>
+                    {{ end }}
+                  </div>
+
+                  <p class="event-description">{{ .description }}</p>
+                </div>
+
+                <div class="event-actions">
+                  {{ if .zoom_meeting }}
+                    {{ if .zoom_link }}
+                    <a href="{{ .zoom_link }}" target="_blank" class="btn-signup btn-zoom">
+                      🔗 Join Zoom Meeting
+                    </a>
+                    {{ end }}
+                  {{ end }}
+
+                  {{ if .volunteers_needed }}
+                    {{ if .volunteer_link }}
+                    <a href="{{ .volunteer_link }}" target="_blank" class="btn-signup btn-volunteer">
+                      🙋 Volunteer Sign Up
+                    </a>
+                    {{ end }}
+                  {{ end }}
+                </div>
+              </div>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      {{ end }}
+      {{ else }}
+      <p class="no-events">No upcoming events at this time. Check back soon!</p>
+      {{ end }}
+      
+      {{ else }}
+      <p class="no-events">No upcoming events at this time. Check back soon!</p>
+      {{ end }}
+      
     </div>
-    {{ end }}
-    {{ end }}
-  </div>
+  </section>
+
 </div>
-{{end}}
+{{ end }}
