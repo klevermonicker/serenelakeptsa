@@ -36,9 +36,6 @@ Desktop.ini
 *.temp
 *.log
 
-# Hugo lock file
-package-lock.json
-
 # Backup files
 *.bak
 *.backup
